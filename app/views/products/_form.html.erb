@@ -1,16 +1,15 @@
+<%= render 'shared/errors', object: @product %>
+
 <%= form_for(@product) do |f| %>
 
 	<div class="field">
-		<%= f.label :name %><br>
-		<%= f.text_field :name %>
+		<%= f.text_field :name, placeholder: "Name" %>
 	</div>
 	<div class="field">
-		<%= f.label :description %><br>
-		<%= f.text_field :description %>
+		<%= f.text_field :description, placeholder: "Description" %>
 	</div>
 	<div class="field">
-		<%= f.label :price_in_cents %><br>
-		<%= f.text_field :price_in_cents %>
+		<%= f.text_field :price_in_cents, placeholder: "Price in Cents" %>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
