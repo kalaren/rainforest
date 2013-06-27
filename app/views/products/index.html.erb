@@ -1,5 +1,5 @@
 <h1>All Products</h1>
-<%= link_to 'Add a Product', new_product_path %> | <%= link_to 'Sign Up', new_user_path %><br>
+<%= link_to 'Add a Product', new_product_path %> | <%= link_to 'Sign Up', new_user_path %> | <%= link_to 'Log In', new_session_path %><br>
 <% @products.each do |product| %>
 	<p>
 		Product:  <%= link_to product[:name] , product_path(product) %><br>
