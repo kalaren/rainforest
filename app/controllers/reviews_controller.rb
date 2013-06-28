@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-	before_filter :load_product, :ensure_logged_in, only: [:edit, :create, :show, :update, :destroy]
+	before_filter :signed_in_user, only: [:edit, :create, :show, :update, :destroy]
 
   def show
   	@review = Review.find(params[:id])
@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
 
   def create
+    load_product
   	@review = @product.reviews.build(
       comment: params[:review][:comment],
       user_id: current_user.id
@@ -20,7 +21,18 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find(params[:id])
+    session[:return_to] ||= request.referer
+  end
 
+  def update
+    @review = Review.find(params[:id])
+
+    if @review.update_attributes(params[:review])
+      redirect_to session[:return_to]
+    else 
+      render 'new'
+    end
   end
 
   def destroy

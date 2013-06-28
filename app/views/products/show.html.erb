@@ -16,8 +16,8 @@
 			<% if review.user != nil %>
 				<em> by <%= review.user.name %></em>
 				Added On: <%= review.created_at %>
-				<% if current_user == review.user %>
-					<%= link_to 'Edit', edit_review_path %>
+				<% if current_user?(review.user) %>
+					<%= link_to 'Edit', edit_review_path(review) %>
 				<% end %>
 			<% end %>
 		</p>

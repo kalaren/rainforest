@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   	if @user.save
       sign_in @user
-  		redirect_to products_url, notice: "You've signed up!"
+  		redirect_to root_path, notice: "You've signed up!"
   	else
   		render "new"
   	end
