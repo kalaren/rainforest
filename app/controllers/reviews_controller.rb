@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-	before_filter :signed_in_user, only: [:edit, :create, :show, :update, :destroy]
+	before_filter :load_product, :signed_in_user
 
   def show
   	@review = Review.find(params[:id])
@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
 
 
   def create
-    load_product
   	@review = @product.reviews.build(
       comment: params[:review][:comment],
       user_id: current_user.id
@@ -38,6 +37,7 @@ class ReviewsController < ApplicationController
   def destroy
   	@review = Review.find(params[:id])
   	@review.destroy
+    redirect_to @product
   end
 
   private

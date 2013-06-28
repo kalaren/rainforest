@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   before_save :create_remember_token
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :products, :through => :reviews
 
   validates_presence_of :password, on: :create
