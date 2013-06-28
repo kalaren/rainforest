@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
 
   	if @user.save
+      sign_in @user
   		redirect_to products_url, notice: "You've signed up!"
   	else
   		render "new"
