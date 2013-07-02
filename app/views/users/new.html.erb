@@ -2,16 +2,16 @@
 <%= render 'shared/errors', object: @user %>
 <%= form_for @user do |f| %>
 	<div class="field">
-		<%= f.text_field :name, placeholder: "Name" %>
+		<%= f.text_field :name, placeholder: "e.g. John" %><label>Name</label>
 	</div>
 	<div class="field">
-		<%= f.text_field :email, placeholder: "Email" %>
+		<%= f.text_field :email, placeholder: "e.g. John@gmail.com" %><label>Email</label>
 	</div>
 	<div class="field">
-		<%= f.text_field :password, placeholder: "Password" %>
+		<%= f.text_field :password, placeholder: "Password" %><label>Password</label>
 	</div>
 	<div class="field">
-		<%= f.text_field :password_confirmation, placeholder: "Re-type Password" %>
+		<%= f.text_field :password_confirmation, placeholder: "Re-type Password" %><label>Confirm Password</label>
 	</div>
 	<div class="actions">
 		<%= f.submit %>
