@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-before_filter :signed_in_user, only: [:show]
+before_filter :signed_in_user, only: [:new, :show]
 
   def index
   	@products = Product.all

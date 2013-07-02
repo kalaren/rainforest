@@ -6,8 +6,8 @@
 <br>
 <% @products.each do |product| %>
 	<p>
-		Product:  <%= link_to product[:name] , product_path(product) %><br>
+		Product:  <%= link_to product.name , product_path(product) %><br>
 		Price: <%= product.formatted_price %><br>
-		Description: <%= product[:description] %>
+		Description: <%= product.description %>
 	</p>
 <% end %>
