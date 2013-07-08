@@ -1,5 +1,3 @@
-<%= form_for([@product, @review]) do |f| %>
-	<% render 'shared/errors', object: @review %>
 
 	<div class="field">
 		<%= f.text_area :comment, placeholder: "Comment here..." %>
@@ -7,4 +5,3 @@
 	<div class="actions">
 		<%= f.submit %>
 	</div>
-<% end %>
