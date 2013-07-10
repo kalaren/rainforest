@@ -11,7 +11,7 @@ FactoryGirl.define do
 	factory :product do
 		sequence(:name) { |n| "Box #{n}" }
 		sequence(:description) { |n| "This is a box numbered #{n}" }
-		sequence(:price_in_cents) { |n| n }
+		sequence(:price_in_cents) { |n| "#{n}" }
 	end
 
 	factory :review do
