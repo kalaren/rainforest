@@ -1,0 +1,12 @@
+.userinfo {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+}
+
+.product {
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	vertical-align: top;
+}

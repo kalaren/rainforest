@@ -1,10 +1,21 @@
+<div ng-controller="PictureListCtrl">
 <h1>All Products</h1>
-<%= link_to 'Add a Product', new_product_path %>
+<%= link_to 'Add a Product', new_product_path %> | 
+Filter: <input ng-model="query"> | 
+Sort By: <select ng-model="orderProp">
+			<option value="name">Product Name A-Z</option>
+			<option value="-name">Product Name Z-A</option>
+			<option value="price_in_cents">Lowest Price</option>
+			<option value="-price_in_cents">Highest Price</option>
+		</select>
+
 <br>
-<% @products.each do |product| %>
-	<p>
-		Product:  <%= link_to product.name , product_path(product) %><br>
-		Price: <%= product.formatted_price %><br>
-		Description: <%= product.description %>
-	</p>
+<p class="product" ng-repeat="product in products | filter:query | orderBy:orderProp">
+<%= link_to "/products/{{product.id}}" do %>  
+{{product.name}}
 <% end %>
+<br>
+Price: {{ product.price_in_cents/100 | currency }} <br>
+Info: {{product.description}}
+</p>
+</div>
