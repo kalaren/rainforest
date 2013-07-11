@@ -40,6 +40,7 @@ describe User do
 		it {should_not be_valid}
 	end
 
-	describe "" do
+	describe "has many products through reviews" do
+		it {should have_many(:products).through(:reviews)}
 	end
 end

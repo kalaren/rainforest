@@ -45,8 +45,8 @@ describe Product do
 		end
 	end
 
-	describe "products can list users who have reviewed" do
-		
+	describe "should have many users through reviews" do
+		it {should have_many(:users).through(:reviews)}
 	end
 
 
