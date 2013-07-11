@@ -2,7 +2,7 @@ Rainforest::Application.routes.draw do
  
   resources :reviews
 
-  resources :users, only: [:new, :create]
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'products#index'

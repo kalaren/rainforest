@@ -1,5 +1,5 @@
 <h1><%= @product.name %></h1>
-<%= link_to 'Product Index', root_path %> | <%= link_to 'Edit', edit_product_path(@product) %> | <%= link_to "Delete", @product, method: :delete, data: { confirm: "Are you sure?" }, title: @product.name %><br>
+<%= link_to 'Edit', edit_product_path(@product) %> | <%= link_to "Delete", @product, method: :delete, data: { confirm: "Are you sure?" }, title: @product.name %><br>
 <p>
 	Price: <%= @product.formatted_price %><br>
 	Description: <%= @product.description %>

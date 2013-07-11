@@ -29,6 +29,7 @@ describe "StaticPages" do
     end
 
     it "should have logout" do
+      
       page.should have_content('Log Out')
     end
   end
